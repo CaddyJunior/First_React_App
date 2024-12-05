@@ -3,22 +3,14 @@ import './Counter.css'
 
 export default function CounterButton({ by, incrementMethod, decrementMethod }) {
 
-    function incrementCounterFunction() {
-        incrementMethod(by)
-    }
-
-    function minusCounterFunction() {
-        decrementMethod(by)
-    }
-
     return (
         <div className='Counter'>
             <div>
                 <button className="counterButton"
-                    onClick={incrementCounterFunction}>+{by}</button>
+                    onClick={() => incrementMethod(by)}>+{by}</button>
 
                 <button className="counterButton"
-                    onClick={minusCounterFunction}>-{by}</button>
+                    onClick={() => decrementMethod(by)}>-{by}</button>
             </div>
         </div>
     )
